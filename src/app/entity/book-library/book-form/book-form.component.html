@@ -1,0 +1,118 @@
+<form class="form" 
+	[formGroup]="bookForm" 
+	(submit)="formSubmit()" 
+	[class.readonly]="readonly"
+	novalidate
+>
+	<div class="form__right-col">
+		<div class="form__img">
+			<img [src]="bookForm.controls['cover'].value"
+				onError="this.src='assets/no-cover.jpg';" 
+				alt
+			>
+		</div>
+		<mat-form-field class="form__field wide">
+			<input formControlName="cover" matInput placeholder="URL обложки" type="text" [readonly]="readonly" id="cover">
+		</mat-form-field>
+	</div>
+	<div class="form__left-col">
+		<div class="form__row">
+			<mat-form-field class="form__field">
+				<input formControlName="name" matInput placeholder="Название" type="text" required [readonly]="readonly">
+				<mat-error *ngIf="bookForm.controls['name'].hasError('required')">
+					Поле обязательно
+				</mat-error>
+			</mat-form-field>
+			<mat-form-field class="form__field">
+				<input formControlName="publisher" matInput placeholder="Издатель" type="text" required [readonly]="readonly">
+				<mat-error *ngIf="bookForm.controls['publisher'].hasError('required')">
+					Поле обязательно
+				</mat-error>
+			</mat-form-field>
+		</div>
+		<div class="form__row">
+			<mat-form-field class="form__field wide" 
+				[class.special]="!readonly"
+				formArrayName="author"
+				*ngFor="let control of bookForm.get('author').controls; let i = index;"
+			>
+				<input [formControlName]="i" matInput placeholder="Автор" type="text" required [readonly]="readonly">
+				<button *ngIf="i > 0 && !readonly"
+					mat-icon-button 
+					class="delete-author-button"
+					(click)="deleteAuthor(i)" 
+					type="button"
+					color="accent"
+					tabindex="-1"
+				>
+					<mat-icon aria-label="Удалить">delete</mat-icon>
+				</button>
+			</mat-form-field>
+			<button *ngIf="!readonly"
+				mat-icon-button 
+				(click)="addAuthor()" 
+				type="button" 
+				color="primary" 
+				tabindex="-1"
+			>
+				<mat-icon aria-label="Добавить">add_circle</mat-icon>
+			</button>
+		</div>
+		<div class="form__row">
+			<mat-form-field class="form__field">
+				<input formControlName="isbn" matInput placeholder="Код ISBN" type="text" maxlength="13" required [readonly]="readonly">
+				<mat-error *ngIf="bookForm.controls['isbn'].hasError('required')">
+					Поле обязательно
+				</mat-error>
+			</mat-form-field>
+			<mat-form-field class="form__field">
+				<input formControlName="publishYear" matInput placeholder="Год издания" type="text" maxlength="4" required [readonly]="readonly">
+				<mat-error *ngIf="bookForm.controls['publishYear'].hasError('required')">
+					Поле обязательно
+				</mat-error>
+			</mat-form-field>
+			<mat-form-field class="form__field">
+				<input formControlName="rating" matInput placeholder="Рейтинг" type="number" min="0" max="10" [readonly]="readonly">
+				<mat-error *ngIf="bookForm.controls['rating'].hasError('min') || bookForm.controls['rating'].hasError('max')">
+					Допустимы значения от 0 до 10
+				</mat-error>
+			</mat-form-field>
+			<mat-form-field class="form__field">
+				<input formControlName="pagesCount" matInput placeholder="Количество страниц" type="number" [readonly]="readonly">
+			</mat-form-field>
+			<mat-form-field class="form__field wide">
+				<textarea formControlName="description" matInput cdkTextareaAutosize placeholder="Описание" required [readonly]="readonly"></textarea>
+				<mat-error *ngIf="bookForm.controls['description'].hasError('required')">
+					Поле обязательно
+				</mat-error>
+			</mat-form-field>
+			<mat-form-field class="form__field wide">
+				<textarea formControlName="note" matInput cdkTextareaAutosize placeholder="Личная заметка" [readonly]="readonly"></textarea>
+			</mat-form-field>
+		</div>
+	</div>
+	<div class="form__buttons">
+		<button mat-raised-button 
+			*ngIf="!readonly" 
+			color="primary"
+			type="submit" 
+			[disabled]="bookForm.invalid"
+		>
+			Сохранить
+		</button>
+		<button mat-raised-button 
+			*ngIf="readonly"  
+			type="button" 
+			(click)="setReadonlyMode(false)"
+		>
+			Редактировать книгу
+		</button>
+		<button mat-raised-button 
+			*ngIf="!readonly && book" 
+			type="button" 
+			(click)="setReadonlyMode(true)"
+		>
+			Отменить
+		</button>
+	</div>
+</form>

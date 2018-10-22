@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
+import { menuItems, MainMenuItem } from './shared/menu/menu-items';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+	selector: 'fb-app-root',
+	templateUrl: './app.component.html',
+	styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'frontend-books';
+
+	menuItems: MainMenuItem[] = menuItems;
+	
+	constructor() {
+		
+	}
 }

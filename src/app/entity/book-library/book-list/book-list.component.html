@@ -1,0 +1,24 @@
+<mat-spinner class="loading-spinner" *ngIf="isLoading"></mat-spinner>
+<div class="book-list" *ngIf="!isLoading">
+	<mat-card class="book-card" 
+		*ngFor="let book of bookList"
+		[routerLink]="book.id"
+	>
+		<mat-card-header>
+			<mat-card-title class="book-card__title">{{ book.name }}</mat-card-title>
+			<mat-card-subtitle class="book-card__author">
+				<span *ngFor="let author of book.author; let isLast = last">
+					{{ author }}{{ isLast ? '' : ', ' }}
+				</span>
+			</mat-card-subtitle>
+		</mat-card-header>
+		<div class="book-card__rating">
+			Рейтинг:
+			<mat-icon *ngFor="let star of book.ratingArray" color="accent">star</mat-icon>
+			<span *ngIf="!book.rating">n/a</span>
+		</div>
+		<div class="book-card__img">
+			<img [src]="book.cover" onError="this.src='assets/no-cover.jpg';" alt>
+		</div>
+	</mat-card>
+</div>

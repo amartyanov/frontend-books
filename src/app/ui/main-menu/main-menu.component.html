@@ -1,0 +1,8 @@
+<mat-nav-list class="main-menu">
+	<mat-list-item *ngFor="let link of menuLinks" 
+		[routerLink]="link.path"
+		[routerLinkActive]="'active'"
+	>
+		{{ link.title }}
+	</mat-list-item>
+</mat-nav-list>

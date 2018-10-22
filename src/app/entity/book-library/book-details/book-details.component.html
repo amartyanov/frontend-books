@@ -1,0 +1,12 @@
+<mat-spinner class="loading-spinner" *ngIf="isLoading"></mat-spinner>
+<mat-card class="fb-mat-card" *ngIf="!isLoading">
+	<mat-card-title>{{ book.name }}</mat-card-title>
+	<mat-card-content>
+		<fb-book-form [book]="book" 
+			[readonly]="readonly" 
+			(bookFormSaved)="updateBook($event)"
+			(setReadonly)="setReadonly($event)"
+		></fb-book-form>
+		<fb-book-reviews [reviews]="book.reviews"></fb-book-reviews>
+	</mat-card-content>
+</mat-card>

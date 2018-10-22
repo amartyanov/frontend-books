@@ -1,0 +1,108 @@
+{
+	"books": [
+		{
+			"id": 0,
+			"name": "Amazing Super Book for HTML",
+			"cover": "http://frontendbookshelf.ru/images/32.jpg",
+			"description": "HTML5 is still evolving, yet browsers such as Safari, Mozilla, Opera, and Chrome already support many of its features -- and mobile browsers are even farther ahead. HTML5: Up & Running carefully guides you though the important changes in this version with lots of hands-on examples, including markup, graphics, and screenshots. You'll learn how to use HTML5 markup to add video, offline capabilities, and more -- and you’ll be able to put that functionality to work right away.",
+			"author": [
+				"J.R.R. Tolkien",
+				"JoJo Bizzare"
+			],
+			"publisher": "Публикатор",
+			"isbn": 1234567890129,
+			"publishYear": 1990,
+			"pagesCount": 459,
+			"rating": 6,
+			"reviews": [
+				{
+					"author": "Роберт Спидвагон",
+					"date": "2014-12-20",
+					"text": "Невероятно и прекрасно, контент на высоте, слог хорош"
+				}
+			],
+			"note": ""
+		},
+		{
+			"reviews": [],
+			"id": 1,
+			"name": "CSS SS",
+			"description": "Historical book. Eternal story about war for 'clean' css",
+			"author": [
+				"Volfgant von Kamptz"
+			],
+			"publisher": "Donkey Publisher Inc.",
+			"isbn": 1234567890128,
+			"publishYear": "2001",
+			"rating": 0,
+			"cover": "http://frontendbookshelf.ru/images/30.png",
+			"note": "Заметка пользователя",
+			"pagesCount": null
+		},
+		{
+			"id": 2,
+			"name": "JavaScript. Сильные стороны",
+			"cover": "http://frontendbookshelf.ru/images/7.png",
+			"description": "Любой язык программирования имеет свои сильные и слабые стороны, однако язык JavaScript в большей степени состоит из последних, так как был разработан в спешке и практически не отлаживался. В этой книге среди множества самых ужасных JavaScript-конструкций выделены наиболее надежные, понятные и удобные в сопровождении то подмножество языка, которое позволяет создавать по-настоящему расширяемый и эффективный код. Автор - уважаемый среди разработчиков эксперт в области JavaScript выделяет массу интересных идей, которые делают JavaScript прекрасным объектно-ориентированным языком программирования. Эта книга откроет вам красивый, элегантный, простой и выразительный язык программирования, позволяющий создавать эффективный код независимо от того, управляете вы библиотеками объектов или просто пытаетесь заставить Ajax работать быстрее. Если вы разрабатываете сайты или приложения для Интернета, via книга вам просто необходима.",
+			"author": [
+				"Дуглас Крокфорд"
+			],
+			"publisher": "O'Reilly",
+			"isbn": 3785496005944,
+			"publishYear": 2013,
+			"pagesCount": 176,
+			"rating": 9,
+			"reviews": [
+				{
+					"author": "Евгений",
+					"date": "12.07.2013",
+					"text": "Книга совсем небольшая, но интересная. Если быть точным, интересны в основном главы, посвященные функциональному программированию (ФП). Хотя ничего нового конкретно по ФП автор не пишет, но возможность использования приемов ФП в JavaScript и еще прототипное наследование стали для меня сюрпризом. Если вы пишите не JavaScript или ActionScript, то, думаю, книгу стоит прочесть."
+				},
+				{
+					"author": "ПроКодер66",
+					"date": "2015-12-20",
+					"text": "Мда... js неочень"
+				},
+				{
+					"author": "Жозефина Иванова",
+					"date": "2017-09-30",
+					"text": "Извучила по этой книге прогамирование и теперь зарабатываю по 2000$ в неделю, не выходя из дома. Это очень просто и я могу больше провдить вермени с ребенком. Я молодая мамочка в декрете нет времени на постоянную работу, но небольшая подработка - это всегда приятно)"
+				}
+			],
+			"note": ""
+		},
+		{
+			"id": 3,
+			"name": "AngularJS для чайников",
+			"cover": "http://frontendbookshelf.ru/images/34.png",
+			"description": "Description",
+			"author": [
+				"Теро Зеро"
+			],
+			"publisher": "Donkey Publisher Inc.",
+			"isbn": 1234567890168,
+			"publishYear": 2000,
+			"pagesCount": 120,
+			"rating": 3,
+			"reviews": [],
+			"note": ""
+		},
+		{
+			"name": "Классная книга",
+			"description": "Описание очень классной книги",
+			"publisher": "Классный издатель",
+			"isbn": 1243243,
+			"publishYear": 2033,
+			"rating": 10,
+			"author": [
+				"Иван",
+				"Петр",
+				"Захар"
+			],
+			"pagesCount": 602,
+			"cover": "https://i.harperapps.com/covers/9780062472984/x400.jpg",
+			"note": "Личная заметка",
+			"id": 4
+		}
+	]
+}
